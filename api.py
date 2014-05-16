@@ -19,11 +19,10 @@ def get():
     return render_template("api_get.html", chat=chat)
 
 
-@api.route("/api/send/<key>/<message>")
 def send(key, message):
-    check = check(key)
-    if check:
-        db.chat.insert({"from":check['username'], "message":message, "time":time.time()})
+    c = check(key)
+    if c:
+        db.chat.insert({"from":c['rsname'], "message":message, "time":time.time()})
 
 
 def check(key):

@@ -85,20 +85,25 @@
                         </div>
                     </div>
                     <div class="col-lg-6" style="padding: 15px 15px 0 15px;">
-                        <div class="well sponsor" id="chat">
-                        	<div id="output" style="overflow: auto;">
-                        	    <div class="chat-msg">
-                            	    <span class="chat-user usr-mod">Pillows</span>: 
-                            	    <span class="chat-text">test</span>
-                        	    </div>
+                        <div class="well sponsor" >
+                            Chat
+                        	<div id="chat" style="overflow: auto;">
+                        	
                         	</div>
                         </div>
                     </div>
+                    {% if "login" in session %}
+                    <br/>
+                    <form method="POST">
+                        <input type="text" name="message" placeholder="Message..."/>
+                    </form> 
+                    {% endif %}
                 </div>
             </div>
         </div>
 
         <script>
+            $("#chat").load("/api/get/");
             setInterval(function() {
 
                 $("#chat").load("/api/get/");

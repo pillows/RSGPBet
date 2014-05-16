@@ -12,6 +12,11 @@
         <script src="../bower_components/respond/dest/respond.min.js"></script>
         <![endif]-->
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+                <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+                        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+                                <script src="{{ url_for('static', filename='js/bootswatch.js') }}"></script>
+
+    
     </head>
     <body>
         <div class="navbar navbar-default navbar-fixed-top">
@@ -71,8 +76,6 @@
                 </div>
             </footer>
         </div>
-        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-        <script src="{{ url_for('static', filename='js/bootswatch.js') }}"></script>
+        
     </body>
 </html>
