@@ -12,11 +12,21 @@
                         </div>
                     </div>
                     <div class="col-lg-6" style="padding: 15px 15px 0 15px;">
-                        <div class="well sponsor">
+                        <div class="well sponsor" id="chat">
                         	Where the chat will go.
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <script>
+            setInterval(function() {
+
+                $("#chat").load("/api/get/");
+
+
+            }, 1000);
+
+        </script>
 {% endblock %}

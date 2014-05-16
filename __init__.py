@@ -8,6 +8,7 @@ from index import index
 #from settings import settings
 #from admin_index import admin_index
 #from admin_tickets import admin_tickets
+from api import api
 
 app = Flask(__name__)
 app.secret_key = "bpV 2Q/sF&[D`2a1Z2-85q/{1]XJRQZgWj3_q)P,=K2O9`B*RKjWiDp9P{F%WK7C"
@@ -17,6 +18,7 @@ port = 5001
 
 #app.register_blueprint(settings)
 app.register_blueprint(index)
+app.register_blueprint(api)
 #app.register_blueprint(login)
 #app.register_blueprint(register)
 #app.register_blueprint(dashboard)
