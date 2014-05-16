@@ -24,24 +24,27 @@
                     </button>
                 </div>
                 <div class="navbar-collapse collapse" id="navbar-main">
+                    {% if "login" in session %}
                     <ul class="nav navbar-nav">
                     	<li>
                             <a href="/">Home</a>
                         </li>
                         <li>
-                            <a href="/wallet">Wallet</a>
+                            <a href="/wallet/">Wallet</a>
                         </li>
                         <li>
-                            <a href="/account">Your Account</a>
+                            <a href="/account/">Your Account</a>
                         </li>
                     	<li>
-                            <a href="/help">Help</a>
+                            <a href="/help/">Help</a>
                         </li>
-					</ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/login" target="_blank">Login</a></li>
-                        <li><a href="/register" target="_blank">Register</a></li>
                     </ul>
+                    {% else %}
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/login/" target="_blank">Login</a></li>
+                        <li><a href="/register/" target="_blank">Register</a></li>
+                    </ul>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -61,7 +64,7 @@
                             <li><a href="/support">Support</a></li>
                         </ul>
                         <p>
-                            © 2014 RSGPBets.com All Rights Reserved. We are not affiliated with Jagex LTD© or Runescape©
+                             2014 RSGPBets.com All Rights Reserved. We are not affiliated with Jagex LTD or Runescape
                         </p>
                     </div>
                 </div>
