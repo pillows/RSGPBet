@@ -1,6 +1,6 @@
 from flask import Flask, render_template, session, redirect
-#from login import login
-#from register import register
+from login import login
+from register import register
 from index import index
 #from dashboard import dashboard
 #from settings import settings
@@ -19,8 +19,8 @@ port = 5001
 #app.register_blueprint(settings)
 app.register_blueprint(index)
 app.register_blueprint(api)
-#app.register_blueprint(login)
-#app.register_blueprint(register)
+app.register_blueprint(login)
+app.register_blueprint(register)
 #app.register_blueprint(dashboard)
 #app.register_blueprint(support)
 #app.register_blueprint(settings)
