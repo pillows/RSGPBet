@@ -1,5 +1,7 @@
 {% for x in chat %}
 
-{{ x['from'] }}: {{ x['message'] }}<br/>
+<span class="chat-user usr-mod">{{ x['from'] }}:</span>: 
+<span class="chat-text">{{ x['message'] }}</span>
+<br/>
 
 {% endfor %}

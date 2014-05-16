@@ -17,7 +17,7 @@
                                     </tr>
                                 </thead>
                                 <tr>
-                                    <td>1</td>
+                                    <td>3</td>
                                     <td>200k</td>
                                     <td>400k</td>
                                     <td>1/2</td>
@@ -34,7 +34,7 @@
 
                                 </tr>
                                 <tr>
-                                    <td>3</td>
+                                    <td>1</td>
                                     <td>200k</td>
                                     <td>400k</td>
                                     <td>1/2</td>
@@ -56,7 +56,7 @@
                                     </tr>
                                 </thead>
                                 <tr>
-                                    <td>1</td>
+                                    <td>3</td>
                                     <td>200k</td>
                                     <td>400k</td>
                                     <td>2/2</td>
@@ -73,7 +73,7 @@
 
                                 </tr>
                                 <tr>
-                                    <td>3</td>
+                                    <td>1</td>
                                     <td>200k</td>
                                     <td>400k</td>
                                     <td>2/2</td>
@@ -85,12 +85,20 @@
                         </div>
                     </div>
                     <div class="col-lg-6" style="padding: 15px 15px 0 15px;">
-                        <div class="well sponsor" id="chat">
+                        <div class="well sponsor" >
                         	<div id="output" style="overflow: auto;">
-                        	    <div class="chat-msg">
+                        	    <div class="chat-msg" id="chat">
                             	    <span class="chat-user usr-mod">Pillows</span>: 
                             	    <span class="chat-text">test</span>
-                        	    </div>
+                        	    </div>    
+                            	    
+                                <div class="input-group">
+                                    <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here...">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-warning btn-sm" id="btn-chat">
+                                            Send</button>
+                                    </span>
+                                </div>
                         	</div>
                         </div>
                     </div>
@@ -99,12 +107,12 @@
         </div>
 
         <script>
-            //setInterval(function() {
+            setInterval(function() {
 
-             //   $("#chat").load("/api/get/");
+               $("#chat").load("/api/get/");
 
 
-            //}, 1000);
+            }, 1000);
 
         </script>
 {% endblock %}
