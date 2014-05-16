@@ -1,3 +1,3 @@
 import pymongo
 
-db = pymongo.MongoClient("127.0.0.1", 27017).rspgbets
+db = pymongo.MongoClient("localhost", 27017).rsgpbet
