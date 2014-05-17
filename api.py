@@ -19,6 +19,10 @@ def get():
     return render_template("api_get.html", chat=chat)
 
 
+@api.route("/api/send/<key>/<message>")
+def send_route(key, message):
+    send(key, message)
+
 def send(key, message):
     c = check(key)
     if c:
