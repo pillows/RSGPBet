@@ -44,12 +44,21 @@
                                 <li><a href="/wallet/transfer">Transfer Funds</a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="/account/">Your Account</a>
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Account<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/account/">Dashboard</a></li>
+                                <li><a href="/account/edit">Edit Profile</a></li>
+                                <li><a href="/account/games">My Games</a></li>
+                            </ul>
                         </li>
                     	<li>
                             <a href="/help/">Help</a>
                         </li>
+                        <li>
+                            <a href="/logout/">Logout</a>
+                        </li>
+
                     </ul>
                     {% else %}
                     <ul class="nav navbar-nav navbar-right">

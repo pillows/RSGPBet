@@ -3,6 +3,7 @@ from login import login
 from register import register
 from index import index
 from wallet import wallet
+from account import account
 #from dashboard import dashboard
 #from settings import settings
 #from support import support
@@ -23,6 +24,7 @@ app.register_blueprint(api)
 app.register_blueprint(login)
 app.register_blueprint(register)
 app.register_blueprint(wallet)
+app.register_blueprint(account)
 #app.register_blueprint(dashboard)
 #app.register_blueprint(support)
 #app.register_blueprint(settings)
