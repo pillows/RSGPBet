@@ -17,7 +17,7 @@
                                     </tr>
                                 </thead>
                                 <tr>
-                                    <td>1</td>
+                                    <td>3</td>
                                     <td>200k</td>
                                     <td>400k</td>
                                     <td>1/2</td>
@@ -34,7 +34,7 @@
 
                                 </tr>
                                 <tr>
-                                    <td>3</td>
+                                    <td>1</td>
                                     <td>200k</td>
                                     <td>400k</td>
                                     <td>1/2</td>
@@ -56,7 +56,7 @@
                                     </tr>
                                 </thead>
                                 <tr>
-                                    <td>1</td>
+                                    <td>3</td>
                                     <td>200k</td>
                                     <td>400k</td>
                                     <td>2/2</td>
@@ -73,7 +73,7 @@
 
                                 </tr>
                                 <tr>
-                                    <td>3</td>
+                                    <td>1</td>
                                     <td>200k</td>
                                     <td>400k</td>
                                     <td>2/2</td>
@@ -86,18 +86,27 @@
                     </div>
                     <div class="col-lg-6" style="padding: 15px 15px 0 15px;">
                         <div class="well sponsor" >
-                            Chat
+                            <b>Chat</b>
                         	<div id="chat" style="overflow: auto;">
                         	
                         	</div>
+                        	<br />
+                        	{% if "login" in session %}
+
+                        	<form method="POST">
+                                <div class="chat-box bg-white">
+            						<div class="input-group">
+            							<input class="form-control border no-shadow no-rounded" name="message" placeholder="Type your message here">
+            							<span class="input-group-btn">
+            								<button class="btn btn-success no-rounded" type="button">Send</button>
+            							</span>
+            						</div><!-- /input-group -->	
+            					</div>
+                            </form> 
+                            {% endif %}
                         </div>
                     </div>
-                    {% if "login" in session %}
-                    <br/>
-                    <form method="POST">
-                        <input type="text" name="message" placeholder="Message..."/>
-                    </form> 
-                    {% endif %}
+                    
                 </div>
             </div>
         </div>

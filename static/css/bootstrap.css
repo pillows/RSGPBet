@@ -5976,3 +5976,11 @@ input:focus {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+.p {
+  margin: 0;
+  padding: 8px;
+  margin-bottom: 12px;
+}
+.wallet-big {
+  font-size: 32px;
+}
