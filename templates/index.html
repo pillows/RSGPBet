@@ -81,13 +81,14 @@
                                     <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
                                 </tr>
                             </table>
-
+                            
                         </div>
+                        <a href="/create" class="btn btn-primary btn-lg active" role="button">Create a Game</a>
                     </div>
                     <div class="col-lg-6" style="padding: 15px 15px 0 15px;">
                         <div class="well sponsor" >
                             <b>Chat</b>
-                        	<div id="chat" style="overflow: auto;">
+                        	<div id="chat" style="overflow:auto;height:400px;max-width: 490px;word-wrap:break-word;">
                         	
                         	</div>
                         	<br />
@@ -116,9 +117,8 @@
             setInterval(function() {
 
                 $("#chat").load("/api/get/");
-
+                document.getElementById('chat').scrollTop = 9999999;
 
             }, 1000);
-
         </script>
 {% endblock %}
