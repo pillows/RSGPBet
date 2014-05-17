@@ -26,7 +26,7 @@ def register_():
             flash("Passwords do not match.")
             return redirect("/register/")
         else:
-            db.members.insert({"email":email, "password":password, "rsname":rsname, "wallet":0, "admin":False})
+            db.members.insert({"email":email, "password":password, "rsname":rsname, "wallet":0, "admin":False, "verified":False})
             session['login'] = email
             return redirect("/")
 
