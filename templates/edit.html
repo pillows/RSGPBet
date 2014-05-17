@@ -50,10 +50,14 @@
 
                               <h2>Account Status</h2>
                               <div class="p">
+                                  {% if not user['verified'] %}
                                 <div><b style="color: red;">X Not Verified</b><br>
                                   ^ your account name will be verified with your first transation</div>
                               </div>
-                            
+                                {% else %}
+                                <div><b style="color: green;">Verified</b><br/>
+                                </div>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
