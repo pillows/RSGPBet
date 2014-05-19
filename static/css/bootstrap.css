@@ -5984,3 +5984,9 @@ input:focus {
 .wallet-big {
   font-size: 32px;
 }
+#footer {
+  min-height: 89.2%;
+  height: auto;
+  margin: 0 auto -68px;
+  padding: 0 0 68px;
+}
