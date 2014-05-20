@@ -10,4 +10,6 @@ def _index():
         check = db.members.find_one({"email":session['login']})
     else:
         check = None
-    return render_template("index.html", user=check)
+    bank = db.games.find({"type":"Bank"}).sort("_id", -1).limit(3)
+    dd = db.games.find({"type":"Dice Duel"}).sort("_id", -1).limit(3)
+    return render_template("index.html", user=check, dd=dd, bank=bank)
