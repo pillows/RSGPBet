@@ -45,6 +45,6 @@ def deposit_():
     if not check:
         return redirect("/")
     
-    games = db.games.find({"rsname":check['rsname']})
+    games = db.games.find({"rsname":check['rsname']}).sort("_id", -1)
     
     return render_template("games.html", games=games)

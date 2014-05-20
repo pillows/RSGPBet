@@ -22,7 +22,7 @@ def withdraw_():
         if not rsname or not time:
             flash("All fields must be filled out.")
             return redirect("/wallet/withdraw")
-        db.tickets.insert({"rsname":rsname, "time":time})
+        db.tickets.insert({"rsname":rsname, "time":time, "type":"withdraw"})
         flash("Your request has been submitted.")                                                                                                                                                     
         return redirect("/wallet/withdraw")
 
@@ -39,7 +39,7 @@ def deposit_():
         if not rsname or not time:
             flash("All fields must be filled out.")
             return redirect("/wallet/deposit")
-        db.tickets.insert({"rsname":rsname, "time":time})
+        db.tickets.insert({"rsname":rsname, "time":time, "type":"deposit"})
         flash("Your request has been submitted.")
         return redirect("/wallet/deposit")
     return render_template("deposit.html")

@@ -16,31 +16,15 @@
                                         <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
+                                {% for x in dd %}
                                 <tr>
-                                    <td>3</td>
-                                    <td>200k</td>
-                                    <td>400k</td>
-                                    <td>1/2</td>
-                                    <td>Pillows</td>
+                                    <td>{{x['id'][0:5]}}...</td>
+                                    <td>{{x['bet']}}</td>
+                                    <td>{{x['win']}}</td>
+                                    <td>{{x['participants']}}/{{x['max_participants']}}</td>
+                                    <td>{{x['rsname']}}</td>
                                     <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>200k</td>
-                                    <td>400k</td>
-                                    <td>1/2</td>
-                                    <td>Pillows</td>
-                                    <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
-
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>200k</td>
-                                    <td>400k</td>
-                                    <td>1/2</td>
-                                    <td>Pillows</td>
-                                    <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
-                                </tr>
+                                </tr>{% endfor %}
                             </table>
                         </div>
                         <div class="well sponsor">
@@ -55,31 +39,17 @@
                                         <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
+                                {% for x in bank %}
                                 <tr>
-                                    <td>3</td>
-                                    <td>200k</td>
-                                    <td>400k</td>
-                                    <td>2/2</td>
-                                    <td>Pillows</td>
+                                   
+                                    <td>{{x['id'][0:5]}}...</td>
+                                    <td>{{x['bet']}}</td>
+                                    <td>{{x['win']}}</td>
+                                    <td>{{x['participants']}}/{{x['max_participants']}}</td>
+                                    <td>{{x['rsname']}}</td>
                                     <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
                                 </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>200k</td>
-                                    <td>400k</td>
-                                    <td>2/2</td>
-                                    <td>Pillows</td>
-                                    <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
-
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>200k</td>
-                                    <td>400k</td>
-                                    <td>2/2</td>
-                                    <td>Pillows</td>
-                                    <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
-                                </tr>
+                                {% endfor %}
                             </table>
                             
                         </div>
