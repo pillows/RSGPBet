@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+{% block content %}   
+		<div class="container">	
+			<!-- Ticket -->
+			<section class="ticket">
+			    <h2 class="hidden">Ticket Title</h2>
+			    <!-- Ticket Header -->
+			    <header class="row ticket-header">
+			        <div class="col-md-9">
+			            <i class="fa fa-trash-o pull-right" title="Delete this ticket"></i>
+			            <i class="fa fa-pencil edit-ticket pull-right" title="Edit this ticket"></i>
+			            <h2>Ticket Title</h2>
+			            <span class="ticket-id">UID</span>
+			        </div>
+			        <div class="col-md-3" style="padding-top:25px;">
+			            <span class="label label-success">OPEN</span>
+			        </div>
+			    </header>
+			    <!-- Ticket Details -->
+			    <div class="row">
+			        <div class="col-md-12">
+			            <div class="table-responsive">
+			                <table class="table">
+			                    <tr>
+			                        <td>LAST UPDATE<br /><span><time datetime="2013-06-01">01 Jun 2013</time></span></td>
+			                        <td>LAST REPLY<br /><span>John Doe</span></td>
+			                        <td>DEPARTMENT<br /><span>Support/Deposit/Withdrawal Deposit and Withdrawal have special functions that require 1 reply and a special form</span></td>
+			                    </tr>
+			                </table>
+			            </div>
+			        </div>
+			    </div>
+			    <article><h2 class="hidden">Replies</h2>
+                <section class="row"><h3 class="hidden">Reply</h3>
+                    <div class="col-md-3 replied-user">
+                        <img src="img/user.png" width="70" height="70" alt="User Photo" />
+                        <span class="user-name">Jane Doe</span>
+                        <span class="user-type">User</span>
+                    </div>
+                    <div class="col-md-9 replied">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam cursus. Morbi ut mi. Nullam enim leo, egestas id, condimentum at, laoreet mattis, massa.
+                        </p>
+                        <p>
+                            Sed eleifend nonummy diam. Praesent mauris ante, elementum et, bibendum at, posuere sit amet, nibh.<br />
+                            Duis tincidunt lectus quis dui viverra vestibulum. Suspendisse vulputate aliquam dui. Nulla elementum dui ut augue. Aliquam vehicula mi at mauris.
+                        </p>
+                        <div class="row details">
+                            <div class="col-md-9">
+                                <div class="pull-left">
+                                    <time datetime="2013-10-15">15 Oct 2013 at 8:45 pm</time>
+                                    <a href="#">Reply with Quote</a>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="pull-right">
+                                    <span class="fa-stack" title="Click to download attachment file">
+                                        <i class="fa fa-square fa-stack-2x"></i>
+                                        <i class="fa fa-paperclip fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+				<hr>
+                <section class="row"><h3 class="hidden">Reply</h3>
+                    <div class="col-md-3 replied-user">
+                        <img src="img/user.png" width="70" height="70" alt="User Photo" />
+                        <span class="user-name">Jane Doe</span>
+                        <span class="user-type staff">Staff</span>
+                    </div>
+                    <div class="col-md-9 replied">
+                        <i class="fa fa-quote-left fa-2x"></i>
+                        <p class="previous-reply">
+                            <span>Jane Doe said</span>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam cursus. Morbi ut mi. Nullam enim leo, egestas id, condimentum at, laoreet mattis, massa.
+                        </p>
+                        <p>
+                            Sed eleifend nonummy diam. Praesent mauris ante, elementum et, bibendum at, posuere sit amet, nibh.<br />
+                            Duis tincidunt lectus quis dui viverra vestibulum. Suspendisse vulputate aliquam dui. Nulla elementum dui ut augue. Aliquam vehicula mi at mauris.
+                        </p>
+                        <div class="row details">
+                            <div class="col-md-9">
+                                <div class="pull-left">
+                                    <time datetime="2013-10-15">15 Oct 2013 at 8:45 pm</time>
+                                    <a href="#">Reply with Quote</a>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="pull-right">
+                                    <span class="fa-stack" title="Click to download attachment file">
+                                        <i class="fa fa-square fa-stack-2x"></i>
+                                        <i class="fa fa-paperclip fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+				<hr>
+                <section class="row"><h3 class="hidden">Reply</h3>
+                    <div class="col-md-3 replied-user">
+                        <img src="img/user.png" width="70" height="70" alt="User Photo" />
+                        <span class="user-name">Jane Doe</span>
+                        <span class="user-type">User</span>
+                    </div>
+                    <div class="col-md-9 replied">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam cursus. Morbi ut mi. Nullam enim leo, egestas id, condimentum at, laoreet mattis, massa.
+                        </p>
+                        <p>
+                            Sed eleifend nonummy diam. Praesent mauris ante, elementum et, bibendum at, posuere sit amet, nibh.<br />
+                            Duis tincidunt lectus quis dui viverra vestibulum. Suspendisse vulputate aliquam dui. Nulla elementum dui ut augue. Aliquam vehicula mi at mauris.
+                        </p>
+                        <div class="row details">
+                            <div class="col-md-9">
+                                <div class="pull-left">
+                                    <time datetime="2013-10-15">15 Oct 2013 at 8:45 pm</time>
+                                    <a href="#">Reply with Quote</a>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="pull-right">
+                                    <span class="fa-stack" title="Click to download attachment file">
+                                        <i class="fa fa-square fa-stack-2x"></i>
+                                        <i class="fa fa-paperclip fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr>
+            </article>
+			</section>
+		</div>
+{% endblock %}

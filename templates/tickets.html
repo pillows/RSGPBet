@@ -7,26 +7,29 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Bet</th>
-                            <th>Win</th>
-                            <th>Players</th>
-                            <th>Participants</th>
-                            <th class="text-center">Action</th>
+                            <th>Title</th>
+                            <th>Author<//th>
+                            <th>Status</th>
+                            <th class="text-center">Actions</th>
                         </tr>
                     </thead>
                     <tr>
-                        {% for x in games %}
+                    	<td>x</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td>x</td>
+                        <td class="text-center"><a class='btn btn-warning btn-xs' href="#"><span class="glyphicon glyphicon-ban-circle"></span> Close</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</a></td>
+                        <!--{% for x in games %}
                         <td>{{ x['_id'] }}</td>
                         <td>{{ x['bet'] }}</td>
                         <td>{{ x['win'] }}</td>
                         <td>{{ x['participants'] }}/{{ x['max_participants'] }}</td>
                         <td>{{ x['rsname'] }}</td>
                         <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
-                        {% endfor %}
+                        {% endfor %}-->
                     
                     </tr>
                 </table>
-                <a href="/create" class="btn btn-primary btn-lg active" role="button">Create a Game</a>
             </div>
         </div>
 

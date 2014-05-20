@@ -5,6 +5,7 @@ from index import index
 from wallet import wallet
 from account import account
 from create import create
+from admin import admin
 #from dashboard import dashboard
 #from settings import settings
 #from support import support
@@ -27,6 +28,7 @@ app.register_blueprint(register)
 app.register_blueprint(wallet)
 app.register_blueprint(account)
 app.register_blueprint(create)
+app.register_blueprint(admin)
 #app.register_blueprint(dashboard)
 #app.register_blueprint(support)
 #app.register_blueprint(settings)
