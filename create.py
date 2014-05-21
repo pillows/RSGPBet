@@ -13,6 +13,7 @@ def create_():
         return redirect("/")
     if request.method == "POST":
         if not request.form.get("amount"):
+            
             flash("You need to bet an amount.")
             return redirect("/create/")
         amount = request.form['amount']
@@ -22,14 +23,15 @@ def create_():
             flash("Amount needs to be an integer.")
             return redirect("/create/")
         if amount > check['wallet']:
+            return 'A'
             flash("You don't have enough gold.")
             return redirect("/create/")
-        if amount == 0:
-            flash("You have to enter an amount greater than 0.")
+        if amount < 10000:
+            flash("You have to bet atleast 10000.")
             return redirect("/create/")
         gameid = uuid.uuid4().hex
         game = request.form['radios1']
-        if game == "dd":
+        if game != "bank":
             try:
                 players = int(request.form['radios'])
             except:
@@ -49,4 +51,4 @@ def create_():
             
         flash("Game has been created.")
         return redirect("/create/")
-    return render_template("create.html")
+    return render_template("create.html", admin=check['admin'])

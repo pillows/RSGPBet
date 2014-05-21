@@ -9,7 +9,7 @@ def wallet_():
     if not user:
         return redirect("/")
 
-    return render_template("wallet.html", user=user)
+    return render_template("wallet.html", user=user, admin=user['admin'])
 
 @wallet.route("/wallet/withdraw", methods=['GET','POST'])
 def withdraw_():
@@ -26,7 +26,7 @@ def withdraw_():
         flash("Your request has been submitted.")                                                                                                                                                     
         return redirect("/wallet/withdraw")
 
-    return render_template("withdraw.html")
+    return render_template("withdraw.html", admin=user['admin'])
 
 @wallet.route("/wallet/deposit", methods=['GET','POST'])
 def deposit_():
@@ -42,7 +42,7 @@ def deposit_():
         db.tickets.insert({"rsname":rsname, "time":time, "type":"deposit"})
         flash("Your request has been submitted.")
         return redirect("/wallet/deposit")
-    return render_template("deposit.html")
+    return render_template("deposit.html", admin=user['admin'])
     
 @wallet.route("/wallet/transfer", methods=['GET','POST'])
 def transfer_():
@@ -72,7 +72,7 @@ def transfer_():
                 db.members.update({"email":session['login']}, {"$set":{"wallet":user['wallet'] - amount}})
                 flash("Funds transfered successfully.")
                 return redirect("/wallet/transfer")
-    return render_template("transfer.html")
+    return render_template("transfer.html", admin=user['admin'])
 
 
 

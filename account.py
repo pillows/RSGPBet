@@ -10,7 +10,7 @@ def account_():
     check = wallet.check()
     if not check:
         return redirect("/")
-    return render_template("dashboard.html")
+    return render_template("dashboard.html", admin=check['admin'])
 
 @account.route("/account/edit", methods=['GET','POST'])
 def withdraw_():
@@ -37,7 +37,7 @@ def withdraw_():
                 db.members.update({"email":session['login']}, {"$set":{"password":password}})
                 flash("Password updated successfully.")
                 return redirect("/account/edit")
-    return render_template("edit.html", user=check)
+    return render_template("edit.html", user=check, admin=check['admin'])
 
 @account.route("/account/games", methods=['GET','POST'])
 def deposit_():
@@ -47,4 +47,4 @@ def deposit_():
     
     games = db.games.find({"rsname":check['rsname']}).sort("_id", -1)
     
-    return render_template("games.html", games=games)
+    return render_template("games.html", games=games, admin=check['admin'])

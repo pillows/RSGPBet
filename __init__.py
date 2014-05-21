@@ -13,6 +13,7 @@ from admin import admin
 #from admin_index import admin_index
 #from admin_tickets import admin_tickets
 from api import api
+from match import match
 
 app = Flask(__name__)
 app.secret_key = "bpV 2Q/sF&[D`2a1Z2-85q/{1]XJRQZgWj3_q)P,=K2O9`B*RKjWiDp9P{F%WK7C"
@@ -29,6 +30,7 @@ app.register_blueprint(wallet)
 app.register_blueprint(account)
 app.register_blueprint(create)
 app.register_blueprint(admin)
+app.register_blueprint(match)
 #app.register_blueprint(dashboard)
 #app.register_blueprint(support)
 #app.register_blueprint(settings)
