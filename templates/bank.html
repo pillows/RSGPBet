@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block content %}        
+        <div class="container">
+            <div class="page-header" id="banner">
+                <div class="row">
+                    <div class="col-lg-6" style="padding: 15px 15px 0 15px;">
+                        <div class="well sponsor">
+                        	<form class="form-horizontal" method="POST">
+                                <legend>Deposit Funds</legend>
+                                <div class="form-group">
+                                    <label for="inputEmail" class="col-lg-2 control-label">Deposit: </label>
+                                    <div class="col-lg-10">
+                                        <input type="text" class="form-control" name="deposit">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail" class="col-lg-2 control-label">Staff Comission: </label>
+                                    <div class="col-lg-10">
+                                        <input type="text" class="form-control" name="staffcomission" readonly="readonly">
+                                    </div>
+                                </div>
+								<div class="form-group">
+                                    <label for="inputEmail" class="col-lg-2 control-label">Final Deposit: </label>
+                                    <div class="col-lg-10">
+                                        <input type="text" class="form-control" name="finaldeposit">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-lg-10 col-lg-offset-2">
+                                        <input type="submit" class="btn btn-primary" value="Submit" />
+                                    </div>
+                                </div>
+                        	</form>
+                        </div>
+                        <div class="well sponsor">
+                        	<form class="form-horizontal" method="POST">
+                                <legend>Withdraw Funds</legend>
+                                <div class="form-group">
+                                    <label for="inputEmail" class="col-lg-2 control-label">Wtihdraw: </label>
+                                    <div class="col-lg-10">
+                                        <input type="text" class="form-control" name="deposit">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail" class="col-lg-2 control-label">Staff Comission: </label>
+                                    <div class="col-lg-10">
+                                        <input type="text" class="form-control" name="staffcomission" readonly="readonly">
+                                    </div>
+                                </div>
+								<div class="form-group">
+                                    <label for="inputEmail" class="col-lg-2 control-label">Final Withdrawal: </label>
+                                    <div class="col-lg-10">
+                                        <input type="text" class="form-control" name="finaldeposit">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-lg-10 col-lg-offset-2">
+                                        <input type="submit" class="btn btn-primary" value="Submit" />
+                                    </div>
+                                </div>
+                        	</form>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6" style="padding: 15px 15px 0 15px;">
+                        <div class="well sponsor">
+                        	<div class="colblock">
+								<h2>Gold in Bank: </h2>
+								<h2>9,001 RSPG</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% endblock %}
