@@ -34,7 +34,7 @@ def match_(uid):
             db.games.update({"_id":ObjectId(x['_id'])}, {"$set":{"participants":x['participants']+1}})
             control = x
 
-        db.games.insert({"type":"Dice Duel", "rsname":user['rsname'], "id":control['id'], "bet":control['bet'], "participants":control['participants']+1, "max_participants":control['max_participants'], "win":None, "roll":None, "resullt":None})
+        db.games.insert({"type":"Dice Duel", "creator":control['creator'], "rsname":user['rsname'], "id":control['id'], "bet":control['bet'], "participants":control['participants']+1, "max_participants":control['max_participants'], "win":None, "roll":None, "resullt":None})
         db.members.update({"rsname":user['rsname']}, {"$set":{"wallet":user['wallet'] - control['bet']}})
         if control['max_participants'] == control['participants'] + 1:
     

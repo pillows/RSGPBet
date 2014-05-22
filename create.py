@@ -37,7 +37,7 @@ def create_():
             except:
                 flash("Number of players has to be an integer.")
                 return redirect("/create/")
-            db.games.insert({"type":"Dice Duel", "rsname":check['rsname'], "id":gameid, "bet":amount, "participants":1, "max_participants":players, "win":None, "roll":None, "resullt":None})
+            db.games.insert({"type":"Dice Duel", "creator":check['rsname'], "rsname":check['rsname'], "id":gameid, "bet":amount, "participants":1, "max_participants":players, "win":None, "roll":None, "resullt":None})
             db.members.update({"rsname":check['rsname']}, {"$set":{"wallet":check['wallet'] - amount}})
         elif game == "bank":
             roll = random.randint(1, 101)
