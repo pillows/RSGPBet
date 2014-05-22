@@ -5,12 +5,13 @@ import protect
 
 account = Blueprint(__name__, "account")
 
-@account.route("/account/", methods=['GET', 'POST'])
+@account.route("/account/tickets", methods=['GET', 'POST'])
 def account_():
     check = wallet.check()
     if not check:
         return redirect("/")
-    return render_template("dashboard.html", admin=check['admin'])
+    tickets = db.tickets.find({"rsname":check['rsname']}).sort("_id", -1)
+    return render_template("dashboard.html", admin=check['admin'], tickets=tickets)
 
 @account.route("/account/edit", methods=['GET','POST'])
 def withdraw_():

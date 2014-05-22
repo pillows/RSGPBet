@@ -1,18 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-		<div class="container">
-            <div class="page-header" id="banner">
-                <div class="row">
-                	{% with messages = get_flashed_messages() %}
-                	<div class="alert alert-danger">
-                		<ul>
-                		{% for message in messages %}
-							<li>{{ message }}</li>
-                		{% endfor %}
-                		</ul>
-                	</div>
-                	{% endwith %}
-                    <div class="col-lg-6" style="padding: 15px 15px 0 15px;">
+<div class="container">                                                                                                                                                                               
+        <div class="page-header" id="banner">
+                                        <div class="row">                                                                 
+                                                                            <div class="col-lg-6" style="padding: 15px 15px 0 15px;">
                         <form class="form-horizontal" method="POST">
                             <fieldset>
                                 <legend>Login</legend>
