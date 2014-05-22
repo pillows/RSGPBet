@@ -48,3 +48,17 @@ def deposit_():
     games = db.games.find({"rsname":check['rsname']}).sort("_id", -1)
     
     return render_template("games.html", games=games, admin=check['admin'])
+    
+@account.route("/account/games/delete/<uid>",methods=['GET','POST'])
+def delete_(uid):
+	user = wallet.check()
+	user = db.members.find_one({"email":session['login']})
+	check = db.games.find_one({"creator":user['rsname']})
+	
+	if check or user['admin']:
+		if db.games.remove({"_id":uid}):
+			return redirect("/account/games")
+		else:
+			return "This game does not exist. <a href='javascript:history.back()'>Click</a> here to go back."
+	else:
+		return "Shame on you. This game does not belong to you."
