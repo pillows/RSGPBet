@@ -18,3 +18,10 @@ def tickets_view(uid):
     if not user or not user['admin']:
         return redirect("/")
 	return render_template("tickets_view.html")
+
+@admin.route("/admin/bank")
+def bank_():
+	#user = wallet.check()
+	#if not user or not user['admin']:
+	#	return redirect("/")
+	return render_template("bank.html")
