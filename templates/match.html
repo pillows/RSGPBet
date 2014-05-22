@@ -29,6 +29,7 @@
                     {% endfor %}
                 </table>
                 {% if control['participants'] < control['max_participants'] %}
+                To get into this game costs {{ control['bet'] }}
                 <form method="POST">
                     <button type="submit" value="1" name="join" class="btn btn-primary btn-lg active">Join</button>
                 </form>
