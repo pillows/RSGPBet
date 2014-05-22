@@ -56,7 +56,7 @@ def delete_(uid):
 	check = db.games.find_one({"creator":user['rsname']})
 	
 	if check or user['admin']:
-		if db.games.remove({"_id":uid}):
+		if db.games.remove({"id":uid}):
 			return redirect("/account/games")
 		else:
 			return "This game does not exist. <a href='javascript:history.back()'>Click</a> here to go back."
