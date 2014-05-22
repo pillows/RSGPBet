@@ -12,6 +12,6 @@ def _index():
     else:
         admin = None
         check = None
-    bank = db.games.find({"type":"Bank"}).sort("_id", -1).limit(3)
-    dd = db.games.find({"type":"Dice Duel"}).sort("_id", -1).limit(3)
+    bank = db.games.find({"type":"Dice Duel", "result":{"$ne":None}}).sort("_id", -1).limit(20)
+    dd = db.games.find({"type":"Dice Duel", "result":None}).sort("_id", -1).limit(20)
     return render_template("index.html", user=check, dd=dd, bank=bank, admin=admin)

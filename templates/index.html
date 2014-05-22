@@ -5,8 +5,30 @@
                 <div class="row">
                     <div class="col-lg-6" style="padding: 15px 15px 0 15px;">
                         <div class="well sponsor">
-                            <strong>Dice Duel</strong>
+                            <strong>Open Games</strong>
                             <table class="table table-striped custab">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Bet</th>
+                                        <th>Player</th>
+                                        <th>Population</th>
+                                        <th class="text-center">Action</th>
+                                    </tr>
+                                </thead>
+                                {% for x in dd %}
+                                <tr>
+                                    <td><a href="/match/{{x['id']}}">{{x['id'][0:5]}}...</a></td>
+                                    <td>{{x['bet']}}</td>
+                                    <td>{{x['rsname']}}</td>
+                                    <td>{{x['participants']}}/{{x['max_participants']}}</td>
+                                    <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+                                </tr>{% endfor %}
+                            </table>
+                        </div>
+                        <div class="well sponsor">
+                            <strong>Finished Games</strong>
+                        	<table class="table table-striped custab">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
@@ -16,36 +38,14 @@
                                         <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
-                                {% for x in dd %}
-                                <tr>
-                                    <td><a href="/match/{{x['id']}}">{{x['id'][0:5]}}...</a></td>
-                                    <td>{{x['bet']}}</td>
-                                    <td>{{x['result']}}</td>
-                                    <td>{{x['participants']}}/{{x['max_participants']}}</td>
-                                    <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
-                                </tr>{% endfor %}
-                            </table>
-                        </div>
-                        <div class="well sponsor">
-                            <strong>Bank Bet</strong>
-                        	<table class="table table-striped custab">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Bet</th>
-                                        <th>Win</th>
-                                        <th>Participant</th>
-                                        <th class="text-center">Action</th>
-                                    </tr>
-                                </thead>
                                 {% for x in bank %}
                                 <tr>
                                     <td>
                                     <a href="/match/{{x['id']}}">   
                                         {{x['id'][0:5]}}...</a></td>
                                     <td>{{x['bet']}}</td>
-                                    <td>{{x['win']}}</td>
-                                    <td>{{x['rsname']}}</td>
+                                    <td>{{x['result']}}</td>
+                                    <td>{{x['participants']}}/{{x['max_participants']}}</td>
                                     <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
                             </tr>
                                 {% endfor %}
