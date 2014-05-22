@@ -11,7 +11,6 @@
                             <th>Win</th>
                             <th>Players</th>
                             <th>Participants</th>
-                            <th class="text-center">Action</th>
                         </tr>
                     </thead>
                     
@@ -22,8 +21,8 @@
                         <td>{{ x['win'] }}</td>
                         <td>{{ x['participants'] }}/{{ x['max_participants'] }}</td>
                         <td>{{ x['rsname'] }}</td>
-                        <td class="text-center"><a href="/account/games/delete/{{ x['id'] }}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
-                        </tr>
+                        {%if x['creator'] == x['rsname'] %} <td class="text-center"><a href="/account/games/delete/{{ x['id'] }}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+                        {% endif %}</tr>
                         {% endfor %}
                     
                     

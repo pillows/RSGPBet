@@ -13,7 +13,7 @@
                                         <th>Bet</th>
                                         <th>Player</th>
                                         <th>Population</th>
-                                        <th class="text-center">Action</th>
+                                        {% if admin %}<th class="text-center">Action</th> {% endif %}
                                     </tr>
                                 </thead>
                                 {% for x in dd %}
@@ -22,8 +22,8 @@
                                     <td>{{x['bet']}}</td>
                                     <td>{{x['rsname']}}</td>
                                     <td>{{x['participants']}}/{{x['max_participants']}}</td>
-                                    <td class="text-center"><a href="/account/games/delete/{{ x['id'] }}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
-                                </tr>{% endfor %}
+                                    {% if admin %}<td class="text-center"><a href="/account/games/delete/{{ x['id'] }}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+                                    {% endif %}</tr>{% endfor %}
                             </table>
                         </div>
                         <div class="well sponsor">
@@ -35,7 +35,7 @@
                                         <th>Bet</th>
                                         <th>Result</th>
                                         <th>Population</th>
-                                        <th class="text-center">Action</th>
+                                        {% if admin %}<th class="text-center">Action</th>{% endif %}
                                     </tr>
                                 </thead>
                                 {% for x in bank %}
@@ -46,8 +46,8 @@
                                     <td>{{x['bet']}}</td>
                                     <td>{{x['result']}}</td>
                                     <td>{{x['participants']}}/{{x['max_participants']}}</td>
-                                    <td class="text-center"><a href="/account/games/delete/{{ x['id'] }}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
-                            </tr>
+                                    {% if admin %}<td class="text-center"><a href="/account/games/delete/{{ x['id'] }}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+                                    {% endif %} </tr>
                                 {% endfor %}
                             </table>
                             
