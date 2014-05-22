@@ -47,7 +47,7 @@
                         <li class="dropdown">
                             <a href="#" data-toggle="dropdown" class="dropdown-toggle">Account<b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="/account/">Dashboard</a></li>
+                                <li><a href="/account/tickets">My Tickets</a></li>
                                 <li><a href="/account/edit">Edit Profile</a></li>
                                 <li><a href="/account/games">My Games</a></li>
                             </ul>
@@ -79,9 +79,20 @@
                 </div>
             </div>
         </div>
-        {% block content %}
-
-		{% endblock %}
+        
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+                                                                        {{ messages[0] }}                        
+                                                                                                                
+                                                
+    
+                                                                {% endif %}                                       
+                                                                                                                                {% endwith %}
+                                                                                                                                
+                                                
+                                                {% block content %}
+                                                
+                                                {% endblock %}
         
         <div class="container">
 	        <footer>
@@ -89,7 +100,6 @@
 	                <div class="col-lg-12">
                         <ul class="list-unstyled">
                             <li class="pull-right"><a href="#top">Back to top</a></li>
-                            <li><a href="/help">API</a></li>
                             <li><a href="/tos">TOS</a></li>
                             <li><a href="/privacy">Privacy Policy</a></li>
                             <li><a href="/faq">FAQ</a></li>

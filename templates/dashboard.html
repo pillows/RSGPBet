@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}    
+        <div class="container">
+            <div class="page-header" id="banner">
+    
+            	<table class="table table-striped custab">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Type</th>
+                            <th>Time</th>
+                            <th>RSname</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    
+                        {% for x in tickets %}
+                        <tr/>
+                            <td>{{ x['_id'] }}</td>
+                        <td>{{ x['type'] }}</td>
+                        <td>{{ x['time'] }}</td>
+                        <td>{{ x['rsname_requested'] }}</td>
+                        <td>{{ x['status']  }}</td>
+                        </tr>
+                        {% endfor %}
+
+            </table>
+                    
+        </div>
+
+{% endblock %}

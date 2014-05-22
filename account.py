@@ -5,12 +5,13 @@ import protect
 
 account = Blueprint(__name__, "account")
 
-@account.route("/account/", methods=['GET', 'POST'])
+@account.route("/account/tickets", methods=['GET', 'POST'])
 def account_():
     check = wallet.check()
     if not check:
         return redirect("/")
-    return render_template("dashboard.html", admin=check['admin'])
+    tickets = db.tickets.find({"rsname":check['rsname']}).sort("_id", -1)
+    return render_template("dashboard.html", admin=check['admin'], tickets=tickets)
 
 @account.route("/account/edit", methods=['GET','POST'])
 def withdraw_():
@@ -56,7 +57,7 @@ def delete_(uid):
 	check = db.games.find_one({"creator":user['rsname']})
 	
 	if check or user['admin']:
-		if db.games.remove({"_id":uid}):
+		if db.games.remove({"id":uid}):
 			return redirect("/account/games")
 		else:
 			return "This game does not exist. <a href='javascript:history.back()'>Click</a> here to go back."

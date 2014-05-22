@@ -7,28 +7,22 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Title</th>
-                            <th>Author<//th>
-                            <th>Status</th>
+                            <th>RSname</th>
+                            <th>Time</th>
+                            <th>Type</th>
                             <th class="text-center">Actions</th>
                         </tr>
                     </thead>
+                    {% for x in tickets %}
                     <tr>
-                    	<td>x</td>
-                        <td>x</td>
-                        <td>x</td>
-                        <td>x</td>
-                        <td class="text-center"><a class='btn btn-warning btn-xs' href="#"><span class="glyphicon glyphicon-ban-circle"></span> Close</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</a></td>
-                        <!--{% for x in games %}
                         <td>{{ x['_id'] }}</td>
-                        <td>{{ x['bet'] }}</td>
-                        <td>{{ x['win'] }}</td>
-                        <td>{{ x['participants'] }}/{{ x['max_participants'] }}</td>
-                        <td>{{ x['rsname'] }}</td>
-                        <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
-                        {% endfor %}-->
-                    
+                        <td>{{ x['rsname_requested'] }}</td>
+                        <td>{{ x['time'] }}</td>
+                        <td>{{ x['type'] }}</td>
+                        <td class="text-center"><a class='btn btn-success btn-xs' href="/admin/tickets/complete/{{ x['_id'] }}"><span class="glyphicon glyphicon-ban-circle"></span> Completed</a> <a href="/admin/tickets/deny/{{ x['_id'] }}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Deny</a></td>
+  
                     </tr>
+                    {% endfor %}
                 </table>
             </div>
         </div>

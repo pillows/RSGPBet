@@ -1,20 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-        <div class="container">
-            <div class="page-header" id="banner">
-            	<form method="POST">
-                <div class="row">
-                {% with messages = get_flashed_messages() %}
-            	<div class="alert alert-danger">
-            		<ul>
-            		{% for message in messages %}
-						<li>{{ message }}</li>
-            		{% endfor %}
-            		</ul>
-            	</div>
-            	{% endwith %}
-                    <div class="col-lg-6" style="padding: 15px 15px 0 15px;">
+<div class="container">
+                            <div class="page-header" id="banner">
+                                                                            <div class="row">                                                                  
+<div class="col-lg-6" style="padding: 15px 15px 0 15px;">
                         <div class="well sponsor">
                             <!-- Multiple Radios -->
                             <div class="control-group">
