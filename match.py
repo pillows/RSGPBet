@@ -59,8 +59,11 @@ def match_(uid):
             final_update = db.games.find({"id":uid})
             for x in final_update:
                 if x['rsname'] == winner['rsname']:
-                    db.games.update({"rsname":x['rsname'], "id":uid}, {"$set":{"win":control['bet'] * x['participants'] - 1, "result":winner['rsname']+" Wins!"}})
-                    db.members.update({"rsname":winner['rsname']}, {"$set":{"wallet":member['wallet'] + control['bet'] * x['participants']}})
+                    win = control['bet'] * x['participants']
+                    win -= win * 0.05
+                    win += member['wallet']
+                    db.games.update({"rsname":x['rsname'], "id":uid}, {"$set":{"win":control['win'], "result":winner['rsname']+" Wins!"}})
+                    db.members.update({"rsname":winner['rsname']}, {"$set":{"wallet":win}})
                 else:
                     db.games.update({"rsname":x['rsname'], "id":uid}, {"$set":{"win":0, "result":winner['rsname']+" Wins!"}})
 
