@@ -1,5 +1,22 @@
 {% extends "base.html" %}
 {% block content %}        
+		<script src="{{ url_for('static', filename='js/calculation.js') }}"></script>
+		<script type="text/javascript">
+		$("#deposit").keyup(function() {
+			var deposit = $("#deposit").val();
+			$("#dstaffcommission").val(parseInt(deposit * .05));
+			var commission = $("#dstaffcommission").val();
+			$("#finaldeposit").val(deposit - commission);
+		});
+		
+		$("#withdraw").keyup(function() {
+			var withdraw = $("#withdraw").val();
+			$("#wstaffcommission").val(withdraw * .05);
+			var commission = $("#dstaffcommission").val();
+			$("#finalwithdraw").val(withdraw - commission);
+		});
+
+		</script>
         <div class="container">
             <div class="page-header" id="banner">
                 <div class="row">
@@ -10,19 +27,19 @@
                                 <div class="form-group">
                                     <label for="inputEmail" class="col-lg-2 control-label">Deposit: </label>
                                     <div class="col-lg-10">
-                                        <input type="text" class="form-control" name="deposit">
+                                        <input type="text" id="deposit" class="form-control" name="deposit">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputEmail" class="col-lg-2 control-label">Staff Comission: </label>
+                                    <label for="inputEmail" class="col-lg-2 control-label">Staff Commission: </label>
                                     <div class="col-lg-10">
-                                        <input type="text" class="form-control" name="staffcomission" readonly="readonly">
+                                        <input type="text" id="dstaffcommission" class="form-control" name="staffcommission" readonly="readonly">
                                     </div>
                                 </div>
 								<div class="form-group">
                                     <label for="inputEmail" class="col-lg-2 control-label">Final Deposit: </label>
                                     <div class="col-lg-10">
-                                        <input type="text" class="form-control" name="finaldeposit">
+                                        <input type="text" id="finaldeposit" class="form-control" name="finaldeposit">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -32,25 +49,25 @@
                                 </div>
                         	</form>
                         </div>
-                        <div class="well sponsor">
+                        <div class="well sponsor" >
                         	<form class="form-horizontal" method="POST">
                                 <legend>Withdraw Funds</legend>
                                 <div class="form-group">
-                                    <label for="inputEmail" class="col-lg-2 control-label">Wtihdraw: </label>
+                                    <label for="inputEmail" class="col-lg-2 control-label">Withdraw: </label>
                                     <div class="col-lg-10">
-                                        <input type="text" class="form-control" name="deposit">
+                                        <input type="text" id="withdraw" class="form-control" name="withdraw">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputEmail" class="col-lg-2 control-label">Staff Comission: </label>
+                                    <label for="inputEmail" class="col-lg-2 control-label">Staff Commission: </label>
                                     <div class="col-lg-10">
-                                        <input type="text" class="form-control" name="staffcomission" readonly="readonly">
+                                        <input type="text" id="wstaffcommission" class="form-control" name="staffcomission" readonly="readonly">
                                     </div>
                                 </div>
 								<div class="form-group">
                                     <label for="inputEmail" class="col-lg-2 control-label">Final Withdrawal: </label>
                                     <div class="col-lg-10">
-                                        <input type="text" class="form-control" name="finaldeposit">
+                                        <input type="text" id="finalwithdraw" class="form-control" name="finalwithdraw">
                                     </div>
                                 </div>
                                 <div class="form-group">

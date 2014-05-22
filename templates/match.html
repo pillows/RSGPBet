@@ -2,7 +2,15 @@
 {% block content %}    
         <div class="container">
             <div class="page-header" id="banner">
-    
+            	{% with messages = get_flashed_messages() %}
+            	<div class="alert alert-danger">
+            		<ul>
+            		{% for message in messages %}
+						<li>{{ message }}</li>
+            		{% endfor %}
+            		</ul>
+            	</div>
+            	{% endwith %}
             	<table class="table table-striped custab">
                     <thead>
                         <tr>
@@ -23,7 +31,7 @@
                         <td>{{ x['participants'] }}/{{ x['max_participants'] }}</td>
                         <td>{{ x['result'] }}</td>
                         <td>{{ x['roll'] }}</td>
-                        <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+                        <td class="text-center"><a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
                  
                     </tr>
                     {% endfor %}
