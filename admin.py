@@ -36,9 +36,52 @@ def tickets_view(uid):
         return redirect("/")
 	return render_template("tickets_view.html")
 
-@admin.route("/admin/bank")
+@admin.route("/admin/bank", methods=['GET', 'POST'])
 def bank_():
-	#user = wallet.check()
-	#if not user or not user['admin']:
-	#	return redirect("/")
-	return render_template("bank.html")
+    user = wallet.check()
+    if not user or not user['admin']:
+	    return redirect("/")
+
+    total = db.bank.find_one()
+    if not total:
+        db.bank.insert({"total":0})
+        total = db.bank.find_one()
+    
+    if request.method == "POST":
+        if request.form.get("withdraw"):
+            name = request.form['rsname']
+            deposit = request.form['finalwithdraw']
+            try:
+                deposit = int(deposit)
+            except:
+                flash("Deposit must be an integer.")
+                return redirect("/admin/bank")
+
+            check = db.members.find_one({"rsname":name})
+            if not check:
+                flash("RSname does not exist on our site.")
+                return redirect("/admin/bank")
+            
+            db.members.update({"rsname":name}, {"$set":{"wallet":check['wallet'] - deposit}})
+            db.bank.update({"total":total['total']}, {"$set":{"total":total['total'] - deposit }})
+            flash("Withdraw successful")
+            return redirect("/admin/bank")
+        if request.form.get("deposit"):
+            name = request.form['rsname']
+            deposit = request.form['finaldeposit']
+            try:
+                deposit = int(deposit)
+            except:
+                flash("Deposit must be an integer.")
+                return redirect("/admin/bank")
+
+            check = db.members.find_one({"rsname":name})
+            if not check:
+                flash("RSname does not exist on our site.")
+                return redirect("/admin/bank")
+            
+            db.members.update({"rsname":name}, {"$set":{"wallet":check['wallet'] + deposit}})
+            db.bank.update({"total":total['total']}, {"$set":{"total":total['total'] + deposit }})
+            flash("Deposit successful")
+            return redirect("/admin/bank")
+    return render_template("bank.html", total=total)
